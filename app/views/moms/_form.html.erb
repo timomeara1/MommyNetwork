@@ -1,0 +1,57 @@
+<%= form_for(@mom) do |f| %>
+  <% if @mom.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@mom.errors.count, "error") %> prohibited this mom from being saved:</h2>
+
+      <ul>
+      <% @mom.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :user %><br />
+    <%= f.text_field :user %>
+  </div>
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+  </div>
+  <div class="field">
+    <%= f.label :age %><br />
+    <%= f.number_field :age %>
+  </div>
+  <div class="field">
+    <%= f.label :neighborhood %><br />
+    <%= f.text_field :neighborhood %>
+  </div>
+  <div class="field">
+    <%= f.label :tvshow %><br />
+    <%= f.text_field :tvshow %>
+  </div>
+  <div class="field">
+    <%= f.label :hobby %><br />
+    <%= f.text_field :hobby %>
+  </div>
+  <div class="field">
+    <%= f.label :children %><br />
+    <%= f.text_field :children %>
+  </div>
+  <div class="field">
+    <%= f.label :photo_id %><br />
+    <%= f.number_field :photo_id %>
+  </div>
+  <div class="field">
+    <%= f.label :education %><br />
+    <%= f.text_field :education %>
+  </div>
+  <div class="field">
+    <%= f.label :pets %><br />
+    <%= f.text_field :pets %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

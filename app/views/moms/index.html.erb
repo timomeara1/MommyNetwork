@@ -1,0 +1,38 @@
+<h1>The Mommy Network</h1>
+<p>Social Networking for Moms on the Go</p>
+
+<% form_tag moms_path, :method => 'get' do %>
+  <p>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search", :name => nil %>
+  </p>
+<% end %>
+
+<table>
+  <tr>
+    <th>User</th>
+    <th>Age</th>
+    <th>Neighborhood</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+  
+<% @moms.each do |mom| %>
+  <tr>
+    <td><%= mom.user %></td>
+    <td><%= mom.age %></td>
+    <td><%= mom.neighborhood %></td>
+    <td><%= link_to 'Show', mom %></td>
+    <td><%= link_to 'Edit', edit_mom_path(mom) %></td>
+    <td><%= link_to 'Destroy', mom, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+
+</table>
+
+<br />
+
+<%= link_to 'Join the fastest growing social networking site on the web!', new_mom_path %>
+
+
